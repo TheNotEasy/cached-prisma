@@ -1,6 +1,6 @@
 # Cached Prisma
 
-A Prisma client abstraction that simplifies caching.
+Add a caching interface to Prisma, compatible with Memcached, Redis and Hazelcast.
 
 ![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/cached-prisma/review.yml)
 ![Version](https://img.shields.io/npm/v/cached-prisma)
