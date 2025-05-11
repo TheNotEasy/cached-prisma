@@ -6,6 +6,7 @@ import { actions } from "../models/Action.model";
 
 export class Prisma {
   private static singleton: Client = {};
+  protected static clientType: typeof PrismaClient = PrismaClient;
 
   cache: Cache;
   client: PrismaClient;
@@ -26,7 +27,7 @@ export class Prisma {
   static cacheFactory = (): Cache => new LruCache(100);
 
   private static clientFactory(): PrismaClient {
-    const client = new PrismaClient();
+    const client = new this.clientType();
 
     for (const field of Object.getOwnPropertyNames(client).filter(
       (property: string) =>
